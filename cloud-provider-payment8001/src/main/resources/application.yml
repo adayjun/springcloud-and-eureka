@@ -1,0 +1,24 @@
+server:
+  port: 8001
+
+spring:
+  application:
+    name: cloud-payment-service #?????????????
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/cloudtest?serverTimezone=UTC&useUnicode=true&characterEncoding=utf-8
+    username: root
+    password: 2001
+
+mybatis:
+  mapper-locations: classpath:mapper/*.xml
+  type-aliases-package: com.example.cloudapicommons.entity
+  global-config:
+
+eureka:
+  client:
+    register-with-eureka: true # 将自己注册进eureka
+    fetch-registry: true # 从eureka抓取自己的注册信息
+    service-url:
+      defaultZone: http://localhost:7001/eureka   #eureka server所在的主机和端口
+
